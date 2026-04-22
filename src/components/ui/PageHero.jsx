@@ -1,0 +1,37 @@
+export default function PageHero({
+  image,
+  label,
+  heading,
+  subheading,
+  orb1Color = "bg-brand",
+  orb2Color = "bg-aurora-purple",
+}) {
+  return (
+    <section className="relative pt-36 pb-20 px-6 md:px-12 overflow-hidden">
+      <img
+        src={image}
+        alt="Dance Academy West Group photo"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover opacity-10"
+      />
+      {/* Aurora orbs */}
+      <div
+        className={`aurora-orb w-96 h-96 ${orb1Color} -top-24 -right-24 opacity-25`}
+      />
+      <div
+        className={`aurora-orb w-80 h-80 ${orb2Color} -bottom-16 -left-16 opacity-20`}
+      />
+
+      <div className="relative max-w-7xl mx-auto text-center">
+        {label && <p className="section-label mb-4">{label}</p>}
+        <h1 className="font-display font-bold text-5xl md:text-6xl text-slate-900 leading-tight mb-5">
+          {heading}
+        </h1>
+        {subheading && (
+          <p className="text-slate-600 text-xl max-w-2xl mx-auto leading-relaxed">
+            {subheading}
+          </p>
+        )}
+      </div>
+    </section>
+  );
+}
