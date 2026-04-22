@@ -6,91 +6,97 @@ import jazz from "../assets/DAW-classes-jazz.png";
 import broadway from "../assets/DAW-classes-broadway.png";
 import acro from "../assets/DAW-classes-acrobatics.jpg";
 import creative from "../assets/DAW-classes-tinytots.png";
-import girlsdance from "../assets/DAW-girls-dance.JPG";
+import girlsdance from "../assets/DAW-girls-dance.jpg";
 import kiddance from "../assets/DAW-kid-dance.jpg";
 import groupphoto from "../assets/DAW-group-photo.jpg";
 import classeshero from "../assets/DAW-classes-hero.jpg";
 
 const dressCodes = [
   {
-    name: 'Ballet',
-    icon: '🩰',
-    attire: 'Black leotard, pink tights, ballet shoes, hair in bun. Everyday undergarments should not be visible — use athletic options instead.',
-    shop: 'https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ27eQAD',
+    name: "Ballet",
+    icon: "🩰",
+    attire:
+      "Black leotard, pink tights, ballet shoes, hair in bun. Everyday undergarments should not be visible — use athletic options instead.",
+    shop: "https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ27eQAD",
   },
   {
-    name: 'Hip Hop',
-    icon: '🎤',
-    attire: 'Loose, comfortable athletic wear that allows full freedom of movement. Clean sneakers required. Personalization and self-expression encouraged.',
-    shop: 'https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ2HvQAL',
+    name: "Hip Hop",
+    icon: "🎤",
+    attire:
+      "Loose, comfortable athletic wear that allows full freedom of movement. Clean sneakers required. Personalization and self-expression encouraged.",
+    shop: "https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ2HvQAL",
   },
   {
-    name: 'Tap',
-    icon: '🥾',
-    attire: 'Comfortable clothing, tap shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Tap",
+    icon: "🥾",
+    attire: "Comfortable clothing, tap shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Jazz',
-    icon: '✨',
-    attire: 'Form-fitting athletic wear, jazz shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Jazz",
+    icon: "✨",
+    attire: "Form-fitting athletic wear, jazz shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Broadway',
-    icon: '🎭',
-    attire: 'Comfortable clothing, character shoes or jazz shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Broadway",
+    icon: "🎭",
+    attire: "Comfortable clothing, character shoes or jazz shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Acrobatics',
-    icon: '🤸',
-    attire: 'Leotard or fitted dance set — no tights. Tights create slipping hazards on the mat. Bare feet or acro shoes.',
-    shop: 'https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ2K3QAL',
+    name: "Acrobatics",
+    icon: "🤸",
+    attire:
+      "Leotard or fitted dance set — no tights. Tights create slipping hazards on the mat. Bare feet or acro shoes.",
+    shop: "https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ2K3QAL",
   },
   {
-    name: 'Tiny Tots / Creative Movement',
-    icon: '🌈',
-    attire: 'Comfortable, easy-to-move-in clothing. Convertible tights work great — worn over the foot or pulled up as needed. Ballet shoes or bare feet.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Tiny Tots / Creative Movement",
+    icon: "🌈",
+    attire:
+      "Comfortable, easy-to-move-in clothing. Convertible tights work great — worn over the foot or pulled up as needed. Ballet shoes or bare feet.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Twirl & Tap',
-    icon: '🩰',
-    attire: 'Comfortable clothing, convertible tights, ballet shoes and tap shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Twirl & Tap",
+    icon: "🩰",
+    attire:
+      "Comfortable clothing, convertible tights, ballet shoes and tap shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Twirl & Groove',
-    icon: '🌟',
-    attire: 'Comfortable clothing, convertible tights, ballet or jazz shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Twirl & Groove",
+    icon: "🌟",
+    attire: "Comfortable clothing, convertible tights, ballet or jazz shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Ballet Technique',
-    icon: '🩰',
-    attire: 'Black leotard, pink tights, ballet shoes, hair in bun. Same requirements as Ballet Performance.',
-    shop: 'https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ27eQAD',
+    name: "Ballet Technique",
+    icon: "🩰",
+    attire:
+      "Black leotard, pink tights, ballet shoes, hair in bun. Same requirements as Ballet Performance.",
+    shop: "https://www.shopnimbly.com/ClassListView?lid=a0e4R00000MQ27eQAD",
   },
   {
-    name: 'Contemporary & Lyrical',
-    icon: '💫',
-    attire: 'Form-fitting athletic wear, bare feet or lyrical shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Contemporary & Lyrical",
+    icon: "💫",
+    attire: "Form-fitting athletic wear, bare feet or lyrical shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Dance Team & Pom',
-    icon: '📣',
-    attire: 'Athletic wear, clean sneakers or pom shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Dance Team & Pom",
+    icon: "📣",
+    attire: "Athletic wear, clean sneakers or pom shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
   {
-    name: 'Acting',
-    icon: '🎬',
-    attire: 'Comfortable clothing, any dance shoes.',
-    shop: 'https://www.shopnimbly.com/daw',
+    name: "Acting",
+    icon: "🎬",
+    attire: "Comfortable clothing, any dance shoes.",
+    shop: "https://www.shopnimbly.com/daw",
   },
-]
+];
 
 const genres = [
   {
@@ -261,18 +267,27 @@ export default function Classes() {
             <p className="section-label mb-3">Come Prepared</p>
             <h2 className="section-heading">What to Wear</h2>
             <p className="text-slate-500 mt-4 max-w-xl mx-auto">
-              Each style has specific attire that keeps dancers safe and moving their best. Shop recommended items directly through our partner store.
+              Each style has specific attire that keeps dancers safe and moving
+              their best. Shop recommended items directly through our partner
+              store.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">
-            {dressCodes.map(d => (
-              <div key={d.name} className="glass-card rounded-2xl p-6 flex flex-col gap-4 hover:shadow-md transition-shadow relative overflow-hidden">
+            {dressCodes.map((d) => (
+              <div
+                key={d.name}
+                className="glass-card rounded-2xl p-6 flex flex-col gap-4 hover:shadow-md transition-shadow relative overflow-hidden"
+              >
                 <div className="aurora-orb w-28 h-28 bg-brand opacity-10 -top-4 -right-4" />
                 <div className="relative">
                   <div className="text-3xl mb-3">{d.icon}</div>
-                  <h3 className="font-display font-bold text-base text-slate-900 mb-2">{d.name}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed flex-1">{d.attire}</p>
+                  <h3 className="font-display font-bold text-base text-slate-900 mb-2">
+                    {d.name}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed flex-1">
+                    {d.attire}
+                  </p>
                 </div>
                 <a
                   href={d.shop}
@@ -291,8 +306,13 @@ export default function Classes() {
             <div className="glass-card rounded-2xl p-6 flex gap-4 items-start">
               <div className="text-3xl shrink-0">👦</div>
               <div>
-                <h3 className="font-display font-bold text-base text-slate-900 mb-1">Boys' Attire</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">Sleeveless or short-sleeved shirts for freedom of movement. Dance belt optional when wearing tights or fitted pants.</p>
+                <h3 className="font-display font-bold text-base text-slate-900 mb-1">
+                  Boys' Attire
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Sleeveless or short-sleeved shirts for freedom of movement.
+                  Dance belt optional when wearing tights or fitted pants.
+                </p>
                 <a
                   href="https://www.shopnimbly.com/daw"
                   target="_blank"
@@ -308,8 +328,14 @@ export default function Classes() {
               <div className="aurora-orb w-40 h-40 bg-aurora-pink opacity-15 -bottom-6 -right-6" />
               <div className="relative">
                 <div className="text-3xl shrink-0 mb-1">🧵</div>
-                <h3 className="font-display font-bold text-base text-slate-900 mb-1">Custom Dancewear — Kelly Sews Love</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">Want something bright, colorful, or one-of-a-kind? Kelly Gammill (our Broadway Dance &amp; Acting instructor) creates custom dancewear through her shop.</p>
+                <h3 className="font-display font-bold text-base text-slate-900 mb-1">
+                  Custom Dancewear — Kelly Sews Love
+                </h3>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Want something bright, colorful, or one-of-a-kind? Kelly
+                  Gammill (our Broadway Dance &amp; Acting instructor) creates
+                  custom dancewear through her shop.
+                </p>
                 <a
                   href="https://kellysewslove.com/"
                   target="_blank"
@@ -323,7 +349,8 @@ export default function Classes() {
           </div>
 
           <p className="text-center text-sm text-slate-400 mt-8">
-            The studio also stocks a limited selection of leotards, shoes, and tights — ask at the front desk.
+            The studio also stocks a limited selection of leotards, shoes, and
+            tights — ask at the front desk.
           </p>
         </div>
       </section>

@@ -1,52 +1,105 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/ui/PageHero";
-import happyside from "../assets/DAW-happy-side.JPG";
+import happyside from "../assets/DAW-happy-side.jpg";
 import hero from "../assets/DAW-about-hero.jpg";
 
-const staffImages = import.meta.glob('../assets/staff/*.webp', { eager: true });
-const staffImg = (filename) => staffImages[`../assets/staff/${filename}`]?.default;
+const staffImages = import.meta.glob("../assets/staff/*.webp", { eager: true });
+const staffImg = (filename) =>
+  staffImages[`../assets/staff/${filename}`]?.default;
 
 const adminStaff = [
-  { name: 'KC Emberson',    role: 'Studio Owner',              photo: 'kc-emberson-daw.webp'      },
-  { name: 'Angela Reagh',   role: 'Enrollment',                photo: 'angela-reagh-daw.webp'     },
-  { name: 'Ann Tritt',      role: 'Accounts Receivable',       photo: 'ann-tritt-daw.webp'        },
-  { name: 'Tori Hughes',    role: 'Marketing Manager',         photo: 'tori-hughes-daw.webp'      },
-  { name: 'EStef Martin',   role: 'Social Media Specialist',   photo: 'estef-martin-daw.webp'     },
-  { name: 'Crystal Robins', role: 'Celebrity Admin Manager',   photo: 'crystal-robins-daw.webp'   },
-]
+  { name: "KC Emberson", role: "Studio Owner", photo: "kc-emberson-daw.webp" },
+  { name: "Angela Reagh", role: "Enrollment", photo: "angela-reagh-daw.webp" },
+  {
+    name: "Ann Tritt",
+    role: "Accounts Receivable",
+    photo: "ann-tritt-daw.webp",
+  },
+  {
+    name: "Tori Hughes",
+    role: "Marketing Manager",
+    photo: "tori-hughes-daw.webp",
+  },
+  {
+    name: "EStef Martin",
+    role: "Social Media Specialist",
+    photo: "estef-martin-daw.webp",
+  },
+  {
+    name: "Crystal Robins",
+    role: "Celebrity Admin Manager",
+    photo: "crystal-robins-daw.webp",
+  },
+];
 
 const instructors = [
-  { name: 'Kelly Gammill',       photo: 'kelly-gammill-daw.webp'      },
-  { name: 'Sherry Proctor',      photo: 'sherry-proctor-daw.webp'     },
-  { name: 'Taylor Benion',       photo: 'taylor-benion-daw.webp'      },
-  { name: 'Julia Hubbard',       photo: 'julia-hubbard-daw.webp'      },
-  { name: 'Gwyn Goodwin',        photo: 'gwyn-goodwin-daw.webp'       },
-  { name: 'DJ Hill',             photo: 'dj-hill-daw.webp'            },
-  { name: 'Erica Keating',       photo: 'erica-keating-daw.webp'      },
-  { name: 'Sara Beth Wilkins',   photo: 'sara-beth-wilkins-daw.webp'  },
-  { name: 'Sophia Flowers',      photo: 'sophia-flowers-daw.webp'     },
-  { name: 'Kirbi Lee Rutledge',  photo: 'kirbi-lee-rutledge-daw.webp' },
-  { name: 'Ava Emberson',        photo: 'ava-emberson-daw.webp'       },
-  { name: 'Avery Tritt',         photo: 'avery-tritt-daw.webp'        },
-]
+  { name: "Kelly Gammill", photo: "kelly-gammill-daw.webp" },
+  { name: "Sherry Proctor", photo: "sherry-proctor-daw.webp" },
+  { name: "Taylor Benion", photo: "taylor-benion-daw.webp" },
+  { name: "Julia Hubbard", photo: "julia-hubbard-daw.webp" },
+  { name: "Gwyn Goodwin", photo: "gwyn-goodwin-daw.webp" },
+  { name: "DJ Hill", photo: "dj-hill-daw.webp" },
+  { name: "Erica Keating", photo: "erica-keating-daw.webp" },
+  { name: "Sara Beth Wilkins", photo: "sara-beth-wilkins-daw.webp" },
+  { name: "Sophia Flowers", photo: "sophia-flowers-daw.webp" },
+  { name: "Kirbi Lee Rutledge", photo: "kirbi-lee-rutledge-daw.webp" },
+  { name: "Ava Emberson", photo: "ava-emberson-daw.webp" },
+  { name: "Avery Tritt", photo: "avery-tritt-daw.webp" },
+];
 
 const guests = [
-  { name: 'Shannon Brown',    photo: 'shannon-brown-daw.webp'    },
-  { name: 'Carly Gallup',     photo: 'carly-gallup-daw.webp'     },
-  { name: 'Cherrise Wakeham', photo: 'cherrise-wakeham-daw.webp' },
-  { name: 'Zach Walker',      photo: 'zach-walker-daw.webp'      },
-  { name: 'Brady Michael',    photo: 'brady-michael-daw.webp'    },
-  { name: 'Summer Robins',    photo: 'summer-robins-daw.webp'    },
-  { name: 'Taylor Gammill',   photo: 'taylor-gimmill-daw.webp'   },
-]
+  { name: "Shannon Brown", photo: "shannon-brown-daw.webp" },
+  { name: "Carly Gallup", photo: "carly-gallup-daw.webp" },
+  { name: "Cherrise Wakeham", photo: "cherrise-wakeham-daw.webp" },
+  { name: "Zach Walker", photo: "zach-walker-daw.webp" },
+  { name: "Brady Michael", photo: "brady-michael-daw.webp" },
+  { name: "Summer Robins", photo: "summer-robins-daw.webp" },
+  { name: "Taylor Gammill", photo: "taylor-gimmill-daw.webp" },
+];
 
 const values = [
-  { emoji: "❤️", title: "Acceptance", desc: "Every child is welcome here, regardless of experience, background, or ability.",        gradient: "from-brand/12 to-aurora-cyan/8",       orb: "bg-brand"         },
-  { emoji: "✨", title: "Joy",        desc: "We believe dance should be fun first. Happy dancers are the best dancers.",              gradient: "from-aurora-purple/12 to-aurora-pink/8", orb: "bg-aurora-purple" },
-  { emoji: "💪", title: "Growth",     desc: "We meet students where they are and help them grow at their own pace.",                  gradient: "from-aurora-cyan/12 to-brand/8",        orb: "bg-aurora-cyan"   },
-  { emoji: "🤝", title: "Community",  desc: "DAW is a family. We celebrate every student's wins — big and small.",                   gradient: "from-aurora-pink/12 to-aurora-purple/8", orb: "bg-aurora-pink"   },
-  { emoji: "🌟", title: "Excellence", desc: "High standards delivered with warmth — we push students to be their best.",             gradient: "from-brand/12 to-aurora-purple/8",      orb: "bg-brand"         },
-  { emoji: "🌈", title: "Inclusion",  desc: "A breath of fresh air in the local dance world. No drama, just dance.",                 gradient: "from-aurora-purple/12 to-brand/8",      orb: "bg-aurora-purple" },
+  {
+    emoji: "❤️",
+    title: "Acceptance",
+    desc: "Every child is welcome here, regardless of experience, background, or ability.",
+    gradient: "from-brand/12 to-aurora-cyan/8",
+    orb: "bg-brand",
+  },
+  {
+    emoji: "✨",
+    title: "Joy",
+    desc: "We believe dance should be fun first. Happy dancers are the best dancers.",
+    gradient: "from-aurora-purple/12 to-aurora-pink/8",
+    orb: "bg-aurora-purple",
+  },
+  {
+    emoji: "💪",
+    title: "Growth",
+    desc: "We meet students where they are and help them grow at their own pace.",
+    gradient: "from-aurora-cyan/12 to-brand/8",
+    orb: "bg-aurora-cyan",
+  },
+  {
+    emoji: "🤝",
+    title: "Community",
+    desc: "DAW is a family. We celebrate every student's wins — big and small.",
+    gradient: "from-aurora-pink/12 to-aurora-purple/8",
+    orb: "bg-aurora-pink",
+  },
+  {
+    emoji: "🌟",
+    title: "Excellence",
+    desc: "High standards delivered with warmth — we push students to be their best.",
+    gradient: "from-brand/12 to-aurora-purple/8",
+    orb: "bg-brand",
+  },
+  {
+    emoji: "🌈",
+    title: "Inclusion",
+    desc: "A breath of fresh air in the local dance world. No drama, just dance.",
+    gradient: "from-aurora-purple/12 to-brand/8",
+    orb: "bg-aurora-purple",
+  },
 ];
 
 export default function About() {
@@ -147,8 +200,12 @@ export default function About() {
                 key={v.title}
                 className="glass-card rounded-2xl p-7 hover:shadow-md hover:-translate-y-1 transition-all duration-200 relative overflow-hidden"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${v.gradient}`} />
-                <div className={`aurora-orb w-28 h-28 ${v.orb} opacity-20 -top-4 -right-4`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${v.gradient}`}
+                />
+                <div
+                  className={`aurora-orb w-28 h-28 ${v.orb} opacity-20 -top-4 -right-4`}
+                />
                 <div className="relative">
                   <div className="text-3xl mb-4">{v.emoji}</div>
                   <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
@@ -177,10 +234,15 @@ export default function About() {
 
           {/* Admin */}
           <div className="mb-14">
-            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-7 text-center">Administration</h3>
+            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-7 text-center">
+              Administration
+            </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-              {adminStaff.map(person => (
-                <div key={person.name} className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+              {adminStaff.map((person) => (
+                <div
+                  key={person.name}
+                  className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+                >
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={staffImg(person.photo)}
@@ -189,8 +251,12 @@ export default function About() {
                     />
                   </div>
                   <div className="p-4 text-center">
-                    <p className="font-display font-bold text-sm text-slate-900 leading-snug">{person.name}</p>
-                    <p className="text-xs text-brand-dark font-semibold mt-1">{person.role}</p>
+                    <p className="font-display font-bold text-sm text-slate-900 leading-snug">
+                      {person.name}
+                    </p>
+                    <p className="text-xs text-brand-dark font-semibold mt-1">
+                      {person.role}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -199,10 +265,15 @@ export default function About() {
 
           {/* Instructors */}
           <div className="mb-14">
-            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-7 text-center">Instructors</h3>
+            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-7 text-center">
+              Instructors
+            </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
-              {instructors.map(person => (
-                <div key={person.name} className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+              {instructors.map((person) => (
+                <div
+                  key={person.name}
+                  className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+                >
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={staffImg(person.photo)}
@@ -211,7 +282,9 @@ export default function About() {
                     />
                   </div>
                   <div className="p-3 text-center">
-                    <p className="font-display font-bold text-sm text-slate-900 leading-snug">{person.name}</p>
+                    <p className="font-display font-bold text-sm text-slate-900 leading-snug">
+                      {person.name}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -220,13 +293,19 @@ export default function About() {
 
           {/* Guest Instructors */}
           <div>
-            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-3 text-center">Guest Instructors & Choreographers</h3>
+            <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-3 text-center">
+              Guest Instructors & Choreographers
+            </h3>
             <p className="text-center text-slate-500 text-sm mb-7 max-w-xl mx-auto">
-              DAW regularly brings in guest artists to provide fresh perspectives, innovative styles, and expert training.
+              DAW regularly brings in guest artists to provide fresh
+              perspectives, innovative styles, and expert training.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-5">
-              {guests.map(person => (
-                <div key={person.name} className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+              {guests.map((person) => (
+                <div
+                  key={person.name}
+                  className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+                >
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={staffImg(person.photo)}
@@ -235,7 +314,9 @@ export default function About() {
                     />
                   </div>
                   <div className="p-3 text-center">
-                    <p className="font-display font-bold text-sm text-slate-900 leading-snug">{person.name}</p>
+                    <p className="font-display font-bold text-sm text-slate-900 leading-snug">
+                      {person.name}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -273,8 +354,9 @@ export default function About() {
                 Primary Location
               </p>
               <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                Our Carrollton studio is our home base and the heart of everything
-                we do. All major programs, classes, and events are centered here.
+                Our Carrollton studio is our home base and the heart of
+                everything we do. All major programs, classes, and events are
+                centered here.
               </p>
               <Link to="/contact" className="btn-primary">
                 Get Directions &amp; Hours

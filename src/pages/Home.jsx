@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import girls from "../assets/DAW-girls-dance.JPG";
+import girls from "../assets/DAW-girls-dance.jpg";
 import kid from "../assets/DAW-kid-dance.jpg";
 import girlsoutside from "../assets/DAW-girls-outside.jpg";
 import group from "../assets/DAW-group-photo.jpg";
@@ -41,31 +41,36 @@ const testimonials = [
   {
     name: "Nicole E.",
     role: "Mom of Olivia & Aiden",
-    quote: "Being a part of the Dance Academy West family has been such a joy! We can't imagine being a part of any other studio!",
+    quote:
+      "Being a part of the Dance Academy West family has been such a joy! We can't imagine being a part of any other studio!",
     avatar: "https://picsum.photos/seed/nicole-e/80/80",
   },
   {
     name: "Jaleen W.",
     role: "Mom of Kennedy",
-    quote: "My daughter has been dancing at DAW for 3 years now and we have loved every single minute of it. We WILL not dance anywhere else. We love our Dance Academy West family!!!",
+    quote:
+      "My daughter has been dancing at DAW for 3 years now and we have loved every single minute of it. We WILL not dance anywhere else. We love our Dance Academy West family!!!",
     avatar: "https://picsum.photos/seed/jaleen-w/80/80",
   },
   {
     name: "Brittany S.",
     role: "Mom of Lily",
-    quote: "Dance Academy West is a fun and welcoming dance studio. The instructors and students are encouraging. Thanks DAW for providing my daughter with a loving and professional dance experience!",
+    quote:
+      "Dance Academy West is a fun and welcoming dance studio. The instructors and students are encouraging. Thanks DAW for providing my daughter with a loving and professional dance experience!",
     avatar: "https://picsum.photos/seed/brittany-s/80/80",
   },
   {
     name: "Zoey",
     role: "DAW Student, Age 8",
-    quote: "It feels like joy to me. I'm comfortable with my dance instructors and love how they encourage me. I love my dance sisters and have more friends than ever before. I feel like I can do anything...",
+    quote:
+      "It feels like joy to me. I'm comfortable with my dance instructors and love how they encourage me. I love my dance sisters and have more friends than ever before. I feel like I can do anything...",
     avatar: "https://picsum.photos/seed/zoey-8/80/80",
   },
   {
     name: "Jennifer A.",
     role: "Mom of Addison & Blakely",
-    quote: "Our girls have loved every minute at DAW! The teachers are so loving, caring, and so knowledgeable. DAW quickly grew into part of our family.",
+    quote:
+      "Our girls have loved every minute at DAW! The teachers are so loving, caring, and so knowledgeable. DAW quickly grew into part of our family.",
     avatar: "https://picsum.photos/seed/jennifer-a/80/80",
   },
 ];
@@ -317,7 +322,9 @@ export default function Home() {
                 key={t.name}
                 className="glass-card rounded-2xl p-8 hover:shadow-md transition-shadow duration-200 flex flex-col w-full relative overflow-hidden"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${i % 3 === 0 ? 'from-brand/10 to-aurora-cyan/6' : i % 3 === 1 ? 'from-aurora-purple/10 to-aurora-pink/6' : 'from-aurora-pink/10 to-brand/6'}`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${i % 3 === 0 ? "from-brand/10 to-aurora-cyan/6" : i % 3 === 1 ? "from-aurora-purple/10 to-aurora-pink/6" : "from-aurora-pink/10 to-brand/6"}`}
+                />
                 <div className="relative flex flex-col flex-1">
                   <div className="text-brand text-5xl font-display leading-none mb-4">
                     "
