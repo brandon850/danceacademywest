@@ -224,11 +224,11 @@ export default function Classes() {
                 className="glass-card rounded-2xl overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200"
               >
                 {/* Cover image */}
-                <div className="relative h-96 overflow-hidden">
+                <div className="relative h-[450px] overflow-hidden">
                   <img
                     src={g.img}
                     alt={g.name}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-[0%_20%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   <div className="absolute bottom-3 left-4 flex items-center gap-2">
