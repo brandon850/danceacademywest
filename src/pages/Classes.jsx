@@ -8,8 +8,12 @@ import acro from "../assets/DAW-classes-acrobatics.jpg";
 import creative from "../assets/DAW-classes-tinytots.png";
 import girlsdance from "../assets/DAW-girls-dance.jpg";
 import kiddance from "../assets/DAW-kid-dance.jpg";
-import groupphoto from "../assets/DAW-group-photo.jpg";
 import classeshero from "../assets/DAW-classes-hero.jpg";
+import acting from "../assets/DAW-classes-acting.jpg";
+import pom from "../assets/DAW-classes-dance-team-pom.jpg";
+import contemporary from "../assets/DAW-classes-contemporary-lyrical.jpg";
+import technique from "../assets/DAW-classes-ballet-technique.jpg";
+import twirl from "../assets/DAW-classes-twirl-groove.jpg";
 
 const dressCodes = [
   {
@@ -102,7 +106,7 @@ const genres = [
   {
     name: "Tiny Tots / Creative Movement",
     ages: "Ages 2–4",
-    img: creative,
+    img: kiddance,
     desc: "Our youngest dancers explore movement, rhythm, and music through imaginative play. This class builds coordination, listening skills, and a love for dance in a nurturing, age-appropriate setting.",
     attire: "Comfortable clothing, ballet shoes or bare feet.",
   },
@@ -116,7 +120,7 @@ const genres = [
   {
     name: "Twirl & Groove",
     ages: "Ages 3–5",
-    img: jazz,
+    img: twirl,
     desc: "A ballet and jazz combo class that introduces our youngest movers to basic terminology and technique from both styles. Emphasis on rhythm, self-expression, and building a love for dance.",
     attire: "Comfortable clothing, convertible tights, ballet or jazz shoes.",
   },
@@ -131,7 +135,7 @@ const genres = [
   {
     name: "Ballet Technique",
     ages: "Ages 7–18",
-    img: girlsdance,
+    img: technique,
     desc: "A non-performance class for dancers who want to accelerate their technical development. Focuses on precision, strength, and skill refinement at a faster pace. Required for all students enrolled in Ballet Performance (intermediate/advanced), Contemporary, or Lyrical.",
     attire: "Black leotard, pink tights, ballet shoes, hair in bun.",
     note: "Required for: Ballet Performance (intermediate/advanced), Contemporary & Lyrical students.",
@@ -167,7 +171,7 @@ const genres = [
   {
     name: "Contemporary & Lyrical",
     ages: "Ages 8–18",
-    img: kiddance,
+    img: contemporary,
     desc: "Interpretive dance styles that embrace innovation and blend techniques from multiple genres. Students learn to express emotion and tell stories through movement. Ballet class enrollment required.",
     attire: "Form-fitting athletic wear, bare feet or lyrical shoes.",
     note: "Co-requisite: Must be enrolled in a Ballet class.",
@@ -182,14 +186,14 @@ const genres = [
   {
     name: "Dance Team & Pom",
     ages: "Ages 8–18",
-    img: groupphoto,
+    img: pom,
     desc: "Recognized as a GHSA sport, this class prepares students for middle and high school dance teams. Focus areas include turn sequences, leaps, pom choreography, and team technique — everything needed to make the team and shine.",
     attire: "Athletic wear, clean sneakers or pom shoes.",
   },
   {
     name: "Acting",
     ages: "Ages 6–18",
-    img: broadway,
+    img: acting,
     desc: "For students pursuing speaking roles or backstage crew positions in the summer recital. Builds confidence, stage presence, and performance skills. Students must also be enrolled in Broadway Dance or Jazz.",
     attire: "Comfortable clothing, any dance shoes.",
     note: "Co-requisite: Must be enrolled in Broadway Dance or Jazz.",
