@@ -1,7 +1,30 @@
 import { Link } from 'react-router-dom'
+import { STUDIO } from '../../data/classes'
 
-const explore   = [['/', 'Home'], ['/classes', 'Classes'], ['/programs', 'Programs'], ['/competitive', 'Competitive'], ['/about', 'About Us']]
-const resources = [['/events', 'Events'], ['/gallery', 'Gallery'], ['/enroll', 'Enroll'], ['/faq', 'FAQ'], ['/contact', 'Contact']]
+const explore = [
+  ['/',                      'Home'                  ],
+  ['/classes/schedule',      'Class Schedule'        ],
+  ['/classes/descriptions',  'Class Descriptions'    ],
+  ['/classes/choosing',      'Choosing a Class'      ],
+  ['/competition-team',      'Competition Team'      ],
+  ['/about',                 'About Us'              ],
+]
+
+const resources = [
+  ['/info/tuition',    'Tuition & Fees' ],
+  ['/info/calendar',   'Calendar'       ],
+  ['/info/dress-code', 'Dress Code'     ],
+  ['/info/policies',   'Policies'       ],
+  ['/programs',        'Progressive Program'],
+  ['/faq',             'FAQ'            ],
+]
+
+const more = [
+  ['/events',  'Events' ],
+  ['/gallery', 'Gallery'],
+  ['/enroll',  'Enroll' ],
+  ['/contact', 'Contact'],
+]
 
 export default function Footer() {
   return (
@@ -9,7 +32,7 @@ export default function Footer() {
       {/* Aurora accent bar */}
       <div className="h-1 bg-gradient-to-r from-aurora-purple via-brand to-aurora-pink" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
         {/* Brand column */}
         <div className="lg:col-span-1">
@@ -20,8 +43,8 @@ export default function Footer() {
               className="h-12 w-12 object-contain"
             />
             <span className="font-display font-bold text-base leading-snug">
-              Dance Academy<br />
-              <span className="text-brand">West</span>
+              <span className="text-brand">Dance</span><br />
+              <span className="text-white">Academy West</span>
             </span>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -91,6 +114,25 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* More links */}
+        <div>
+          <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-5">
+            More
+          </h3>
+          <ul className="space-y-3">
+            {more.map(([to, label]) => (
+              <li key={to}>
+                <Link
+                  to={to}
+                  className="text-slate-300 hover:text-brand text-sm transition-colors duration-200"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Contact info */}
         <div>
           <h3 className="font-display font-bold text-xs uppercase tracking-wider text-slate-400 mb-5">
@@ -99,19 +141,27 @@ export default function Footer() {
           <div className="space-y-4 text-sm text-slate-400">
             <div>
               <p className="text-slate-200 font-semibold">Carrollton, GA</p>
-              <p className="text-brand text-xs font-semibold mt-0.5">Primary Location</p>
             </div>
+            <p className="text-slate-400 text-xs leading-relaxed">
+              {STUDIO.address}
+            </p>
             <a
-              href="mailto:info@danceacademy.com"
+              href={`mailto:${STUDIO.email}`}
               className="block hover:text-brand transition-colors duration-200"
             >
-              info@danceacademy.com
+              {STUDIO.email}
             </a>
             <a
-              href="tel:+17705952390"
+              href={STUDIO.phoneHref}
               className="block hover:text-brand transition-colors duration-200"
             >
-              (770) 595-2390
+              {STUDIO.phone} <span className="text-slate-500">· call or text</span>
+            </a>
+            <a
+              href={STUDIO.smsHref}
+              className="block hover:text-brand transition-colors duration-200"
+            >
+              {STUDIO.textPhone} <span className="text-slate-500">· text only</span>
             </a>
           </div>
         </div>
@@ -121,7 +171,7 @@ export default function Footer() {
       <div className="border-t border-slate-800 px-6 md:px-12 py-5 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
         <p>© {new Date().getFullYear()} Dance Academy West. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <Link to="/policies" className="hover:text-slate-300 transition-colors duration-200">Policies</Link>
+          <Link to="/info/policies" className="hover:text-slate-300 transition-colors duration-200">Policies</Link>
           <span>·</span>
           <p>Celebrating 25 seasons of dance in West Georgia.</p>
         </div>

@@ -42,7 +42,7 @@ export default function Competitive() {
   return (
     <>
       <PageHero
-        label="Competitive Teams"
+        label="Competition Team"
         heading="Dance at the Next Level"
         subheading="For dedicated dancers who are ready to push their craft, compete, and represent Dance Academy West on a bigger stage."
         orb1Color="bg-aurora-purple"
@@ -70,7 +70,7 @@ export default function Competitive() {
                 role in the broader DAW community — performing at events, inspiring younger students,
                 and representing everything we stand for.
               </p>
-              <Link to="/contact" className="btn-primary">Inquire About Competitive Teams</Link>
+              <Link to="/contact" className="btn-primary">Inquire About the Competition Team</Link>
             </div>
 
             <div className="glass-card rounded-3xl p-10 relative overflow-hidden">

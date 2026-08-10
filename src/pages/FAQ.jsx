@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/ui/PageHero";
+import { STUDIO } from "../data/classes";
 import faqhero from "../assets/DAW-faq-hero.jpg";
 
 const faqs = [
   {
     q: "What age can my child start dancing?",
-    a: "We offer classes starting at age 2! Our Tiny Tots / Creative Movement class is designed specifically for our youngest dancers ages 2–4. Mini sessions are available from age 2, and most structured programs begin at age 3.",
+    a: "We offer classes starting at age 2! Our Tiny Tots / Creative Movement class is designed specifically for our youngest dancers ages 2–4. Most structured programs begin at age 3.",
   },
   {
-    q: "What is a Mini Session and how does it work?",
-    a: "A mini session is a 5–6 week trial program for $125. Your child joins an existing class with established students — no special beginner section. It's a real taste of what DAW is like. There's no commitment to continue after the session ends.",
+    q: "Can we try a class before enrolling?",
+    a: "Yes — schedule a free trial class any time. Your child joins an existing class with established students, so it's a real taste of what DAW is like rather than a separate beginner session. There's no cost and no commitment to continue afterward.",
   },
   {
     q: "What is the Progressive Program?",
@@ -34,7 +35,7 @@ const faqs = [
   },
   {
     q: "Is there a recital? Do all students perform?",
-    a: "We hold a summer recital every season. Recital participation is for students in the Progressive Program. Mini session students do not participate in the recital, but are of course welcome to join the Progressive Program to be eligible.",
+    a: "We hold a summer recital every season. Recital participation is for students in the Progressive Program — enroll by spring to secure your dancer's spot on stage.",
   },
   {
     q: "How is DAW different from other studios in the area?",
@@ -46,7 +47,7 @@ const faqs = [
   },
   {
     q: "How do I contact DAW with more questions?",
-    a: "You can reach us by email at info@danceacademy.com or by phone at (770) 595-2390. You can also fill out the contact form on our Contact page and we'll get back to you within 1–2 business days.",
+    a: "Text us at (762) 572-5678, or call or text (770) 489-8580. You can also email info@danceacademywest.com or fill out the contact form on our Contact page — we'll get back to you within 1–2 business days.",
   },
 ];
 
@@ -105,15 +106,15 @@ export default function FAQ() {
               Still Have Questions?
             </h3>
             <p className="text-slate-500 text-sm mb-6">
-              We're always happy to help. Reach out and we'll get back to you
-              quickly.
+              We're always happy to help. Send us a text and we'll get back to
+              you quickly.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <Link to="/contact" className="btn-primary">
+              <a href={STUDIO.smsHref} className="btn-primary">
+                Text Us
+              </a>
+              <Link to="/contact" className="btn-secondary">
                 Contact Us
-              </Link>
-              <Link to="/enroll" className="btn-secondary">
-                Enroll Now
               </Link>
             </div>
           </div>

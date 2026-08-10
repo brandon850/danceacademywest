@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import girls from "../assets/DAW-girls-dance.jpg";
+import ClassListEmbed from "../components/ui/ClassListEmbed";
+import { STUDIO } from "../data/classes";
+// TODO: Swap `hero` for the studio's new homepage photo once supplied.
+import hero from "../assets/DAW-girls-outside.jpg";
 import kid from "../assets/DAW-kid-dance.jpg";
 import girlsoutside from "../assets/DAW-girls-outside.jpg";
 import group from "../assets/DAW-group-photo.jpg";
@@ -7,32 +10,26 @@ import group from "../assets/DAW-group-photo.jpg";
 const genres = [
   {
     name: "Ballet",
-    emoji: "🩰",
     desc: "Grace, poise, and classical technique for all ages and levels.",
   },
   {
     name: "Hip Hop",
-    emoji: "🎤",
     desc: "High-energy moves, rhythm, and creative self-expression.",
   },
   {
     name: "Tap",
-    emoji: "👟",
     desc: "Rhythm and footwork that's as fun as it looks — and sounds.",
   },
   {
     name: "Jazz",
-    emoji: "✨",
     desc: "Dynamic, expressive movement bursting with personality.",
   },
   {
     name: "Broadway",
-    emoji: "🎭",
     desc: "Theatrical performance combining storytelling, song, and dance.",
   },
   {
     name: "Acrobatics",
-    emoji: "🤸",
     desc: "Strength, flexibility, and impressive athletic skills.",
   },
 ];
@@ -79,7 +76,7 @@ const stats = [
   { value: "25", label: "Seasons of Dance" },
   { value: "6+", label: "Dance Genres" },
   { value: "Ages 2–18", label: "Programs for All Ages" },
-  { value: "$125", label: "Mini Session — 5 Weeks" },
+  { value: "Free", label: "Trial Class" },
 ];
 
 export default function Home() {
@@ -99,10 +96,10 @@ export default function Home() {
               🎉 Now Enrolling — Ages 2–18
             </div>
             <h1 className="font-display font-bold text-5xl md:text-6xl lg:text-7xl text-slate-900 leading-tight mb-6">
-              Where Every Child
+              We Do Things
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark via-cyan-400 to-aurora-purple">
-                Finds Their Dance
+                Differently Here
               </span>
             </h1>
             <p className="text-slate-600 text-xl leading-relaxed mb-10 max-w-lg">
@@ -111,9 +108,14 @@ export default function Home() {
               unforgettable for every child.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/programs" className="btn-primary text-base px-8 py-4">
-                Try a Mini Session — $125
-              </Link>
+              <a
+                href={STUDIO.freeTrial}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-base px-8 py-4"
+              >
+                Schedule a Free Trial Class
+              </a>
               <Link to="/enroll" className="btn-secondary text-base px-8 py-4">
                 Enroll Now
               </Link>
@@ -129,8 +131,8 @@ export default function Home() {
               {/* Main photo */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
                 <img
-                  src={girls}
-                  alt="Kids dancing at Dance Academy West"
+                  src={hero}
+                  alt="Dancers at Dance Academy West"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-black/30 to-transparent" />
@@ -186,33 +188,39 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center mb-14">
             <p className="section-label mb-3">Choose Your Path</p>
-            <h2 className="section-heading">Two Ways to Start Dancing</h2>
+            <h2 className="section-heading">Start Dancing</h2>
+            <p className="text-slate-600 mt-4 max-w-xl mx-auto">
+              Find the class that fits your dancer, then come try it free before
+              you commit to anything.
+            </p>
           </div>
 
+          {/* Choose a Class chart — live Studio Pro class list */}
+          <ClassListEmbed className="mb-12" />
+
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Mini Session */}
+            {/* Free trial */}
             <div className="glass-card rounded-3xl p-10 relative overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-brand/12 to-aurora-cyan/8" />
               <div className="aurora-orb w-64 h-64 bg-brand top-0 right-0 opacity-20 group-hover:opacity-30 transition-opacity" />
               <div className="relative">
-                <div className="text-5xl mb-5">🌟</div>
                 <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
-                  Mini Session
+                  Free Trial Class
                 </h3>
                 <p className="text-brand-dark font-bold text-lg mb-5">
-                  $125 &nbsp;·&nbsp; 5 Weeks &nbsp;·&nbsp; No Commitment
+                  No Cost &nbsp;·&nbsp; No Commitment
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-7">
-                  Perfect for first-timers. Try a real class alongside
-                  established students and discover if dance is the right fit —
-                  no pressure, just fun.
+                  The best way to know is to come dance with us. Your child sits
+                  in on a real class alongside established students — no
+                  pressure, just fun.
                 </p>
                 <ul className="space-y-2.5 text-sm text-slate-700 mb-9">
                   {[
                     "Ages 2–18 welcome",
                     "All skill levels",
-                    "Integrated into real classes",
-                    "No long-term commitment",
+                    "A real class, not a taster session",
+                    "Decide afterward — no obligation",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5">
                       <span className="w-5 h-5 rounded-full bg-brand/20 flex items-center justify-center text-brand-dark font-bold text-xs shrink-0">
@@ -222,9 +230,14 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/programs" className="btn-primary">
-                  Start a Mini Session
-                </Link>
+                <a
+                  href={STUDIO.freeTrial}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Schedule a Free Trial Class
+                </a>
               </div>
             </div>
 
@@ -233,7 +246,6 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-aurora-purple/12 to-aurora-pink/8" />
               <div className="aurora-orb w-64 h-64 bg-aurora-purple top-0 right-0 opacity-20 group-hover:opacity-30 transition-opacity" />
               <div className="relative">
-                <div className="text-5xl mb-5">🏆</div>
                 <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
                   Progressive Program
                 </h3>
@@ -266,6 +278,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <p className="text-center text-sm text-slate-500 mt-8">
+            Need help narrowing it down?{" "}
+            <Link
+              to="/classes/choosing"
+              className="text-brand-dark font-semibold hover:underline"
+            >
+              Read our guide to choosing a class
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -286,7 +309,6 @@ export default function Home() {
                 key={genre.name}
                 className="bg-white/80 glass-card rounded-2xl p-7 hover:shadow-md hover:-translate-y-1 transition-all duration-200"
               >
-                <div className="text-4xl mb-4">{genre.emoji}</div>
                 <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
                   {genre.name}
                 </h3>
@@ -298,7 +320,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
-            <Link to="/classes" className="btn-secondary">
+            <Link to="/classes/descriptions" className="btn-secondary">
               View All Classes & Schedule
             </Link>
           </div>
@@ -370,16 +392,18 @@ export default function Home() {
             Ready to Find Your Child's Dance?
           </h2>
           <p className="text-black/80 text-lg mb-10 leading-relaxed">
-            Start with a no-commitment 5-week Mini Session for just $125.
-            Classes are forming now — spots fill fast.
+            Start with a free trial class — no cost, no commitment. Classes are
+            forming now, and spots fill fast.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              to="/enroll"
+            <a
+              href={STUDIO.freeTrial}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-slate-900 font-display font-bold px-9 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
             >
-              Enroll Today
-            </Link>
+              Schedule a Free Trial Class
+            </a>
             <Link
               to="/contact"
               className="border-2 border-black/80 text-black font-display font-bold px-9 py-4 rounded-full hover:bg-white/15 transition-all duration-200"

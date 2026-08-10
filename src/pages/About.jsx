@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PageHero from "../components/ui/PageHero";
+import { STUDIO } from "../data/classes";
 import happyside from "../assets/DAW-happy-side.jpg";
 import hero from "../assets/DAW-about-hero.jpg";
 
@@ -168,12 +169,11 @@ export default function About() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
             {[
               { value: "25", label: "Seasons" },
               { value: "700+", label: "Students in System" },
               { value: "6+", label: "Dance Genres" },
-              { value: "2", label: "Locations" },
             ].map((s) => (
               <div
                 key={s.label}
@@ -337,7 +337,7 @@ export default function About() {
             <div className="rounded-t-3xl overflow-hidden h-72 w-full">
               <iframe
                 title="Dance Academy West location"
-                src="https://maps.google.com/maps?q=1004+Bankhead+Highway+Carrollton+GA+30117&output=embed"
+                src={STUDIO.mapQuery}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -351,12 +351,11 @@ export default function About() {
                 Carrollton, GA
               </h3>
               <p className="text-brand-dark font-semibold text-sm mb-4">
-                Primary Location
+                {STUDIO.address}
               </p>
               <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                Our Carrollton studio is our home base and the heart of
-                everything we do. All major programs, classes, and events are
-                centered here.
+                Our Carrollton studio is the heart of everything we do — all
+                programs, classes, and events are centered here.
               </p>
               <Link to="/contact" className="btn-primary">
                 Get Directions &amp; Hours
