@@ -1,0 +1,14 @@
+node_modules
+dist
+.vercel
+
+# Secrets — never commit. .env.example documents the required keys.
+.env
+.env.local
+.env*.local
+
+.DS_Store
+*.log
+
+# Local Claude Code settings (permission allowlists, machine-specific)
+.claude/settings.local.json
