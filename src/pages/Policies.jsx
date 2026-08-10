@@ -8,7 +8,7 @@ const sections = [
     icon: '📋',
     title: 'Enrollment',
     items: [
-      { heading: 'Programs Offered', body: 'DAW offers a year-round Progressive Program and 4–6 week Mini Sessions. Classes are divided by grade and ability level.' },
+      { heading: 'Programs Offered', body: 'DAW offers a year-round Progressive Program. Classes are divided by grade and ability level.' },
       { heading: 'Class Placement', body: 'The studio reserves the right to reassign students to a different level mid-season to ensure optimal learning and class balance.' },
       { heading: 'Minimum Enrollment', body: 'Classes with fewer than 5 enrolled students may be cancelled. Affected students will be transferred to a comparable alternative.' },
       { heading: 'Non-Discrimination', body: 'Dance Academy West does not discriminate on the basis of race, color, religion, gender, national origin, sexual orientation, or military status.' },
@@ -73,7 +73,7 @@ const sections = [
     items: [
       { heading: 'Notice Deadline', body: 'Withdrawal notice must be submitted by the 15th of the month to avoid being charged for the following month.' },
       { heading: 'Non-Refundable Fees', body: 'Previously collected tuition, costume fees, and performance fees are non-refundable under any circumstances.' },
-      { heading: 'Competitive Team Members', body: 'Students on a competitive team remain responsible for all contracted fees through the end of the season, regardless of withdrawal date.' },
+      { heading: 'Competition Team Members', body: 'Students on a competition team remain responsible for all contracted fees through the end of the season, regardless of withdrawal date.' },
       { heading: 'Costume Forfeiture', body: 'Students who withdraw before costumes have been distributed forfeit their costume and any related fees paid.' },
       { heading: 'Re-Enrollment', body: 'Students who re-enroll after withdrawing will be charged the $100 registration fee again. Previously paid fees are not applied to future enrollment.' },
     ],

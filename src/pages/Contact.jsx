@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PageHero from "../components/ui/PageHero";
+import { submitForm } from "../lib/submitForm";
+import { STUDIO } from "../data/classes";
 import contacthero from "../assets/DAW-contact-hero.jpg";
 
 export default function Contact() {
@@ -8,14 +10,27 @@ export default function Contact() {
     email: "",
     phone: "",
     message: "",
+    company: "", // honeypot
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError(null);
+    try {
+      await submitForm("contact", form);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -45,19 +60,25 @@ export default function Contact() {
                 {
                   icon: "📍",
                   label: "Location",
-                  value: "Carrollton, GA (Primary Location)",
+                  value: STUDIO.address,
                 },
                 {
                   icon: "📧",
                   label: "Email",
-                  value: "info@danceacademy.com",
-                  href: "mailto:info@danceacademy.com",
+                  value: STUDIO.email,
+                  href: `mailto:${STUDIO.email}`,
                 },
                 {
                   icon: "📞",
-                  label: "Phone",
-                  value: "(770) 595-2390",
-                  href: "tel:+17705952390",
+                  label: "Call or Text",
+                  value: STUDIO.phone,
+                  href: STUDIO.phoneHref,
+                },
+                {
+                  icon: "💬",
+                  label: "Text Only",
+                  value: STUDIO.textPhone,
+                  href: STUDIO.smsHref,
                 },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
@@ -113,7 +134,7 @@ export default function Contact() {
             <div className="mt-10 glass-card rounded-2xl overflow-hidden h-56">
               <iframe
                 title="Dance Academy West location"
-                src="https://maps.google.com/maps?q=1004+Bankhead+Highway+Carrollton+GA+30117&output=embed"
+                src={STUDIO.mapQuery}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -202,11 +223,36 @@ export default function Contact() {
                     placeholder="How can we help you?"
                   />
                 </div>
+                {/* Honeypot — hidden from people, tempting to bots. */}
+                <div className="hidden" aria-hidden="true">
+                  <label>
+                    Company
+                    <input
+                      type="text"
+                      name="company"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.company}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </div>
+
+                {error && (
+                  <p
+                    role="alert"
+                    className="text-sm text-rose-700 bg-rose-50 border border-rose-200 rounded-xl px-4 py-3"
+                  >
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="btn-primary w-full justify-center text-base py-4"
+                  disabled={sending}
+                  className="btn-primary w-full justify-center text-base py-4 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  Send Message
+                  {sending ? "Sending…" : "Send Message"}
                 </button>
               </form>
             )}
